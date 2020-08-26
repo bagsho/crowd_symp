@@ -5,13 +5,13 @@ require(ggplot2)
 #ui
 
 ui <- fluidPage(
-  titlePanel("Enfeksiyon Gununden itibaren Gunlere Gore Sempton Gorulme Oranlari"),
+  titlePanel("Enfeksiyon Gününden İtibaren Günlere Göre Sempton Görülme Oranları"),
   sidebarLayout(
     	sidebarPanel(
 
 		checkboxGroupInput("checkGroup", label = h3("Sempton"), 
-    			choices = list("Ates" = 1, "Kuru Oksuruk" = 2, "Bogaz Agrisi" = 3,
-				"Yutkunma Zorlugu"=4, "Bas Agrisi"=5, "Ishal"=6, "Koku Alamama"=7),
+    			choices = list("Ateş" = 1, "Kuru Öksürük" = 2, "Boğaz Ağrısı" = 3,
+				"Yutkunma Zorluğu"=4, "Baş Ağrısı"=5, "İshal"=6, "Koku Alamama"=7),
     			selected = c(1,2))
 		
   	),
@@ -33,7 +33,7 @@ exprs<- function(input) {
 
 ##gun ve sympton olusturuluyor.
 day<-data.frame(1:14)
-sympton<-c("Ates","Kuru Oksuruk" ,"Bogaz Agrisi" ,"Yutkunma Zorlugu","Bas Agrisi","Ishal","Koku Alamama")
+sympton<-c("Ateş","Kuru Öksürük" ,"Boğaz Ağrısı" ,"Yutkunma Zorluğu","Baş Ağrısı","İshal","Koku Alamama")
 
 ##gun ve sempton birlestiriliyor.
 df<-merge(day,sympton)
